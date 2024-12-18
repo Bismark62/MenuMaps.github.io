@@ -1,0 +1,140 @@
+/* General Body Styling */
+body {
+    background-image: url(images/Untitled\ design.svg); /* Relative path */
+    background-size: cover; /* Ensures the image scales to cover the entire screen */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    min-height: 100vh; /* Ensures the background covers at least the viewport height */
+    margin: 0; /* Removes default margin for the body */
+    font-family: Arial, sans-serif; /* Sets a default font */
+    color: rgb(8, 8, 8); /* Default text color */
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    background-color: rgba(59, 58, 58, 0.9); /* Slight transparency for better readability */
+}
+.navbar-brand, .nav-link {
+    color: rgb(124, 115, 115) !important;
+}
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Content Styling */
+.content {
+    margin: 20px;
+}
+
+.content p, .col-md-4 p {
+    font-weight: bold; /* Makes paragraphs bold */
+    color: rgb(8, 8, 8); /* Sets paragraph text color */
+}
+
+/* Heading Styles */
+h1, h3 {
+    color: rgb(2, 2, 2); /* Ensure headings are dark */
+    font-weight: bold; /* Ensure headings are bold */
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Map Container Styling */
+.map-container {
+    max-width: 600px; /* Restricts the map width */
+    margin: 20px auto; /* Centers the map and adds spacing */
+    height: 400px; /* Fixed height for the map container */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: background to ensure visibility */
+    border-radius: 8px; /* Optional: rounded corners */
+    overflow: hidden; /* Ensures iframe doesn't overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for aesthetics */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0; /* Removes border around the iframe */
+}
+
+/* Video Container Styling */
+.video-container {
+    text-align: center;
+    margin: 20px auto; /* Centers the container and adds vertical spacing */
+}
+
+.video-container iframe {
+    width: 560px; /* Standard YouTube video width */
+    height: 315px; /* Standard YouTube video height */
+    max-width: 100%; /* Ensures responsiveness on smaller screens */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    display: block; /* Ensures proper alignment */
+    margin: 0 auto; /* Centers the iframe */
+}
+
+/* Mission Text */
+.mission-text {
+    font-weight: bold; /* Makes mission statement bold */
+    color: #000; /* Ensures text is black */
+    margin-top: 20px;
+}
+
+/* Contact Page Styling */
+.menu-maps-logo {
+    text-align: center;
+    margin: 20px 0;
+}
+.menu-maps-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.contact-main {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.contact-form .form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contact-form .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-main {
+        margin: 20px;
+        padding: 20px;
+    }
+}
