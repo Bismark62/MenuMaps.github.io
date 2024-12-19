@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Menu Maps - Contact</title>
 </head>
@@ -23,15 +23,9 @@
         </nav>
     </header>
 
-    <!-- Logo Section -->
-    <div class="menu-maps-logo">
-        <img src="images/Untitled (100 x 100 px).svg" alt="Menu Maps Logo" class="img-fluid">
-    </div>
-
-    <!-- Contact Form -->
     <main class="text-center contact-main">
         <h1>Contact Us</h1>
-        <form action="https://example.com/form-handler" method="POST" class="contact-form">
+        <form id="contactForm" class="contact-form">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -56,40 +50,12 @@
                 <label for="phone">Phone:</label>
                 <input type="tel" class="form-control" id="phone" name="phone">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" id="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <div id="userDetails" class="mt-4"></div>
     </main>
 
-    <!-- Cookies Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-
-            // Function to set a cookie
-            function setCookie(name, value, days) {
-                const expires = new Date(Date.now() + days * 864e5).toUTCString();
-                document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
-            }
-
-            // Function to get a cookie
-            function getCookie(name) {
-                const cookieArr = document.cookie.split('; ');
-                for (let cookie of cookieArr) {
-                    const [key, val] = cookie.split('=');
-                    if (key === name) return decodeURIComponent(val);
-                }
-                return "";
-            }
-
-            // Load cookies into input fields
-            nameInput.value = getCookie('name') || '';
-            emailInput.value = getCookie('email') || '';
-
-            // Save cookies on input change
-            nameInput.addEventListener('input', () => setCookie('name', nameInput.value, 7));
-            emailInput.addEventListener('input', () => setCookie('email', emailInput.value, 7));
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
