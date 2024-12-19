@@ -1,21 +1,23 @@
-// Example of using local storage to save user data
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const subjectInput = document.getElementById('subject');
+    const phoneInput = document.getElementById('phone');
+    const submitButton = document.getElementById('submit');
+    const userDetails = document.getElementById('userDetails');
 
-    // Load saved data from local storage
-    if (localStorage.getItem('name')) {
-        nameInput.value = localStorage.getItem('name');
-    }
-    if (localStorage.getItem('email')) {
-        emailInput.value = localStorage.getItem('email');
-    }
-
-    // Save data to local storage on input change
-    nameInput.addEventListener('input', function() {
-        localStorage.setItem('name', nameInput.value);
-    });
-    emailInput.addEventListener('input', function() {
-        localStorage.setItem('email', emailInput.value);
+    // Display user input on submit
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent page reload
+        const userInfo = `
+            <h3>Submitted Information</h3>
+            <p><strong>Name:</strong> ${nameInput.value}</p>
+            <p><strong>Email:</strong> ${emailInput.value}</p>
+            <p><strong>Message:</strong> ${messageInput.value}</p>
+            <p><strong>Subject:</strong> ${subjectInput.value}</p>
+            <p><strong>Phone:</strong> ${phoneInput.value || 'Not Provided'}</p>
+        `;
+        userDetails.innerHTML = userInfo;
     });
 });
