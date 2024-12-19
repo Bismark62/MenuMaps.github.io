@@ -6,6 +6,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const phoneInput = document.getElementById('phone');
     const submitButton = document.getElementById('submit');
     const userDetails = document.getElementById('userDetails');
+    const cookieConsentModal = document.getElementById('cookieConsentModal');
+    const acceptCookiesButton = document.getElementById('acceptCookies');
+
+    // Show cookie consent modal if not already accepted
+    if (!localStorage.getItem('cookiesAccepted')) {
+        cookieConsentModal.style.display = 'block'; // Show the modal
+    }
+
+    // Handle cookie consent acceptance
+    acceptCookiesButton.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true'); // Save acceptance in localStorage
+        cookieConsentModal.style.display = 'none'; // Hide the modal
+    });
 
     // Display user input on submit
     submitButton.addEventListener('click', (event) => {
@@ -18,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <p><strong>Subject:</strong> ${subjectInput.value}</p>
             <p><strong>Phone:</strong> ${phoneInput.value || 'Not Provided'}</p>
         `;
-        userDetails.innerHTML = userInfo;
+        userDetails.innerHTML = userInfo; // Update userDetails section with submitted data
     });
 });
